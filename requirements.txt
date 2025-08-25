@@ -1,0 +1,6 @@
+streamlit
+openai>=1.40.0
+httpx
+duckduckgo-search>=6.3.0
+pydantic>=2.7
+python-dotenv
