@@ -6,9 +6,9 @@ tools_module = importlib.import_module("tools")
 
 MODEL = os.getenv("LLM_MODEL", "gpt-4o")
 
-st.set_page_config(page_title="AI Agent Workshop", page_icon="🧭")
-st.title("🧭 Minimal AI Agent")
-st.caption("Model‑tool loop with Streamlit UI (for AI workshop on 26th Aug 2025).")
+st.set_page_config(page_title="AI Agent Workshop", page_icon="🎮")
+st.title("🎮 Jarvis")
+st.caption("Developed by Stefin A R & Cristin Baijo")
 
 with st.sidebar:
     st.subheader("Settings")
