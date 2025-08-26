@@ -1,0 +1,26 @@
+{
+  "name": "AI Agent Workshop",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {}
+  },
+  "postCreateCommand": "pip install -U pip && pip install -r requirements.txt",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter",
+        "github.vscode-github-actions",
+        "mhutchie.git-graph"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python"
+      }
+    }
+  },
+  "forwardPorts": [8501],
+  "portsAttributes": {
+    "8501": { "label": "Streamlit", "onAutoForward": "openBrowser" }
+  },
+  "remoteUser": "vscode"
+}
