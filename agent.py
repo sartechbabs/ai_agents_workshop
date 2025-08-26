@@ -1,6 +1,10 @@
 import os
 from typing import List, Dict, Any
 from openai import OpenAI
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 SYSTEM = (
     "You are a helpful agent. Decide when to call tools. "
@@ -11,7 +15,7 @@ def get_client() -> OpenAI:
     api_key = os.getenv("LLM_API_KEY")
     if not api_key:
         raise RuntimeError("Missing LLM_API_KEY. Set it in environment or Secrets.")
-    base_url = os.getenv("LLM_BASE_URL", "https://openrouter.ai/api/v1")
+    base_url = os.getenv("LLM_BASE_URL", "https://api.openai.com/v1")
     return OpenAI(api_key=api_key, base_url=base_url)
 
 def call_model(messages: List[Dict[str, Any]], tools: List[Dict[str, Any]], model: str, temperature: float = 0.2):
